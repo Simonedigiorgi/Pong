@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3j5ad637ekaoj</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>1280</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="OrizzontalBar" sid="179606632039849">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="249404735787430" type="number" />
+                <instance-variable name="Direction" sid="337484393301547" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="839834862620778">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="993353528737419">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="288210065716667">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="778716108495672">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="173355884024469" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0" y="0.164" />
+                            <point x="0.5" y="0" />
+                            <point x="1" y="0.164" />
+                            <point x="1" y="0.844" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="0.844" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="VerticalBar" sid="110850584108669">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="851121490949575" type="number" />
+                <instance-variable name="Direction" sid="450232896456133" type="number" />
+                <instance-variable name="PosX" sid="836672561972404" type="number" />
+                <instance-variable name="PosY" sid="865688621074498" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="784328434425111">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="395545863539551">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="423380325642403">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="372387344301052">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="422885040177583" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.164" y="0" />
+                            <point x="0.844" y="0" />
+                            <point x="1" y="0.5" />
+                            <point x="0.844" y="1" />
+                            <point x="0.164" y="1" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Corner" sid="266781014554908">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="162849140023232">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="759462803120211" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="552335962401335">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Player1Coord" sid="215014553295039">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Ball" sid="424047905237021">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Shock_PowerUp" sid="847472187571036" type="number" />
+                <instance-variable name="Shock" sid="687969350072597" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="589728486451294">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="359698538641072">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="719252469625020" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Romboid" sid="745980626141057">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="315311159266244">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="908432182399865" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Elettrify" sid="344601951430701">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="513829446513870" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Size" sid="170929143070898">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="292760646804022" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Match" sid="823685387095066">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GameOver" sid="208501878444285">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Electricity" sid="338769901004463">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="8" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

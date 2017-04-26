@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Player1Move" sid="689543279941826" static="0" type="number">1</variable>
+        <variable constant="0" name="Match" sid="210376011989742" static="0" type="number">3</variable>
+        <variable constant="0" name="DIR_RIGHT" sid="482225621269494" static="0" type="number">0</variable>
+        <variable constant="0" name="DIR_DOWN" sid="556815252343762" static="0" type="number">90</variable>
+        <variable constant="0" name="DIR_LEFT" sid="727452647920169" static="0" type="number">180</variable>
+        <variable constant="0" name="DIR_UP" sid="162985481871263" static="0" type="number">270</variable>
+        <event-group description="" sid="263940724835265" title="Start">
+            <sub-events>
+                <event-block sid="739282409822645">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="179832450940758" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="12" name="Set world gravity" sid="264723699940384" type="Ball">
+                            <param id="0" name="Gravity">0</param>
+                        </action>
+                        <action behavior="Physics" id="2" name="Apply force at angle" sid="457995749654285" type="Ball">
+                            <param id="0" name="Force">1000</param>
+                            <param id="1" name="Angle">random(360)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="805510563902733">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="651067975456624" type="System">
+                            <param id="0" name="Variable">Match</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="803268962164582" type="GameOver">
+                            <param id="0" name="Text">&quot;Game Over&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="534388448772790" type="System">
+                            <param id="0" name="Variable">Match</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="634152173192155">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="664058421443471" type="System" />
+                <condition id="-2" name="Compare Y" sid="454991594949036" type="VerticalBar">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Y co-ordinate">VerticalBar.Y</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="792622317561911" type="Player1Coord">
+                    <param id="0" name="Text">VerticalBar.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="807539030333780" type="Match">
+                    <param id="0" name="Text">&quot;Match&quot; &amp; Match</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="378251800382533" title="Player1Controls">
+            <sub-events>
+                <event-block sid="635035388603224">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="182051152276169" type="System">
+                            <param id="0" name="Variable">Player1Move</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="592303177990927">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="882735184336032" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="798140167587281" type="OrizzontalBar">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">DIR_RIGHT</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="220761622640670" type="OrizzontalBar">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">OrizzontalBar.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="424252666361191">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="459350917440552" type="Keyboard">
+                                    <param id="0" name="Key">83 (S)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="771520427873799" type="VerticalBar">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">DIR_DOWN</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="617591286784502" type="VerticalBar">
+                                    <param id="0" name="Angle">90</param>
+                                    <param id="1" name="Distance">VerticalBar.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="905005452488427">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="602501435988535" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="909157654878900" type="OrizzontalBar">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">DIR_LEFT</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="547401317970704" type="OrizzontalBar">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">OrizzontalBar.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="109038519030334">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="968136995018530" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="184010302165451" type="VerticalBar">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Value">DIR_UP</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="903805722756477" type="VerticalBar">
+                                    <param id="0" name="Angle">270</param>
+                                    <param id="1" name="Distance">VerticalBar.Speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="848604150628613" title="Player1Movements">
+            <sub-events>
+                <event-block disabled="1" sid="117068601857366">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="671418380277892" type="OrizzontalBar">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">DIR_RIGHT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Set Y" sid="391462543178700" type="VerticalBar">
+                            <param id="0" name="Y">VerticalBar.Y - (Self.Speed)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="195938771896612">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="493858927263137" type="VerticalBar">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">DIR_DOWN</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Set Y" sid="388578670677154" type="VerticalBar">
+                            <param id="0" name="Y">VerticalBar.Y - (Self.Speed)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="283695941027894">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="957689747952941" type="OrizzontalBar">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">DIR_LEFT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Set Y" sid="496557658846496" type="VerticalBar">
+                            <param id="0" name="Y">VerticalBar.Y - (Self.Speed)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="126812709769950">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="976603806678234" type="VerticalBar">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">DIR_UP</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-2" name="Set Y" sid="466350214392590" type="VerticalBar">
+                            <param id="0" name="Y">VerticalBar.Y - (Self.Speed)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="296439591889119" title="Ball" />
+        <event-block sid="255878792412741">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="948405498700518" type="Ball" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="855372899241281" type="System">
+                    <param id="0" name="Variable">Match</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="769661485703299" type="System" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="985236083717409" title="Penality">
+            <sub-events>
+                <event-block sid="664264067265336">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="195987482715327" type="Size">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="829614863365030" type="VerticalBar">
+                            <param id="0" name="Height">96</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="476615098732539" type="OrizzontalBar">
+                            <param id="0" name="Width">96</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="650096991030552">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="577715928637010" type="Elettrify">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="382705159276241" type="Ball">
+                            <param id="0" name="Instance variable">Shock_PowerUp</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="404298345435394" type="Electricity">
+                            <param id="0" name="Text">Ball.Shock_PowerUp</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="780165588787822">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="605070199694307" type="Keyboard">
+                            <param id="0" name="Key">69 (E)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="948334389848913" type="Ball">
+                            <param id="0" name="Instance variable">Shock_PowerUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="624966782780121" type="Ball">
+                            <param id="0" name="Instance variable">Shock</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="773086712634608">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="661569509693810" type="Ball">
+                            <param id="0" name="Object">OrizzontalBar</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="989805498330932" type="Ball">
+                            <param id="0" name="Instance variable">Shock</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="950399676837417" type="System">
+                            <param id="0" name="Variable">Player1Move</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
